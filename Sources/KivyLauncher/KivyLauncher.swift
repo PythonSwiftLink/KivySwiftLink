@@ -78,7 +78,7 @@ fileprivate class PythonRunTime {
 	
 	private func pythonHome() {
 		
-		let resourcePath = Bundle.module.resourcePath!
+		let resourcePath = Bundle.main.resourcePath!
 		let python_home = "PYTHONHOME=\(resourcePath)"
 		putenv(python_home)
 		let extra = other_paths.count > 0 ? ":\(other_paths.joined(separator: ":"))" : ""
