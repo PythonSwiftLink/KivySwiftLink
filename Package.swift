@@ -24,7 +24,7 @@ pythonLibDeps.append("libssl")
 
 
 let package = Package(
-    name: "Kivy-iOS-Package",
+    name: "KivySwiftLink",
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
 //        .library(
