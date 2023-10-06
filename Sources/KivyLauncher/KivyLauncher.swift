@@ -6,7 +6,7 @@
 
 import UIKit
 import PythonSwiftCore
-import PythonLib
+//import PythonLib
 
 fileprivate
 func putenv(_ s: String) {

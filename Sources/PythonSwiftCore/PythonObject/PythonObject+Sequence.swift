@@ -1,6 +1,6 @@
 import Foundation
 import PythonLib
-import PythonTypeAlias
+//import PythonTypeAlias
 
 class PyArray<T: PyConvertible>: PySequenceProtocol {
     

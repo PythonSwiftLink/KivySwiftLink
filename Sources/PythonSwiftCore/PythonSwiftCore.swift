@@ -7,13 +7,14 @@
 
 import Foundation
 
-@_exported import PythonLib
+@_exported 
+import PythonLib
 
-import PythonTypeAlias
+//import PythonTypeAlias
 
 public typealias PyConvertible = PyEncodable
 public typealias ConvertibleFromPython = PyDecodable
 
-public typealias PyPointer = PythonTypeAlias.PyPointer
+//public typealias PyPointer = PythonTypeAlias.PyPointer
 
 

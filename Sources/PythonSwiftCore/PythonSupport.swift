@@ -2,7 +2,7 @@
 import Foundation
 import CoreGraphics
 import PythonLib
-import PythonTypeAlias
+//import PythonTypeAlias
 
 extension String {
 //    @inlinable public var python_str: PythonPointer { withCString(PyUnicode_FromString) }

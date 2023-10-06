@@ -1,6 +1,6 @@
 import Foundation
 import PythonLib
-import PythonTypeAlias
+//import PythonTypeAlias
 
 
 public func optionalPyPointer<T: PyEncodable>(_ v: T?) -> PyPointer {

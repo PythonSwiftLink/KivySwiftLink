@@ -1,6 +1,6 @@
 import Foundation
 import PythonLib
-import PythonTypeAlias
+//import PythonTypeAlias
 
 extension String {
     var object: PythonPointerU { PyUnicode_FromString(self) }

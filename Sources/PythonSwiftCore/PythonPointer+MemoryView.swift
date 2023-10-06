@@ -6,7 +6,7 @@
 import AVFoundation
 import Foundation
 import PythonLib
-import PythonTypeAlias
+//import PythonTypeAlias
 
 @inlinable
 func createMemoryView(data: inout [UInt8],_ completion: @escaping (PythonPointer)->Void )  {

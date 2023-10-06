@@ -1,6 +1,6 @@
 import Foundation
 import PythonLib
-import PythonTypeAlias
+//import PythonTypeAlias
 
 extension Collection where Element == PyConvertible {
     public var list_object: PythonPointer {

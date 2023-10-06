@@ -1,6 +1,6 @@
 import Foundation
-import PythonLib
-import PythonTypeAlias
+import PythonSwiftCore
+//import PythonTypeAlias
 
 
 public final class PySwiftModuleImport {

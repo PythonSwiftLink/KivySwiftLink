@@ -1,6 +1,6 @@
 import Foundation
 import PythonLib
-import PythonTypeAlias
+//import PythonTypeAlias
 
 private var importedModules = [String: PythonPointer]()
 private var importedModulesItems = [String: PythonPointer]()

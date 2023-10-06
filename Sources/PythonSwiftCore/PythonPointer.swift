@@ -1,7 +1,7 @@
 import Foundation
 import CoreGraphics
 import PythonLib
-import PythonTypeAlias
+//import PythonTypeAlias
 
 extension PyPointer {
     @inlinable public static var PyNone: PyPointer {

@@ -1,6 +1,6 @@
 import Foundation
 import PythonLib
-import PythonTypeAlias
+//import PythonTypeAlias
 
 //public func PyErr_Printer() -> (type: PyPointer, value: PyPointer, tb: PyPointer) {
 //    var type: PyPointer = nil

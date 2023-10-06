@@ -1,6 +1,6 @@
 import Foundation
 import PythonLib
-import PythonTypeAlias
+//import PythonTypeAlias
 
 
 @inlinable public func PyTuple_GetItem<R: ConvertibleFromPython>(_ object: PyPointer?,_ index: Int) throws -> R {
