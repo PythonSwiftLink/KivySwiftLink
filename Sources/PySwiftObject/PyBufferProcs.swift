@@ -3,7 +3,7 @@
 import Foundation
 import PythonSwiftCore
 //import PythonTypeAlias
-import PythonLib
+import PythonCore
 
 public class PyBufferProcsHandler {
     

@@ -1,5 +1,5 @@
 import Foundation
-import PythonLib
+import PythonCore
 //import PythonTypeAlias
 
 private var importedModules = [String: PythonPointer]()

@@ -6,7 +6,8 @@
 
 import UIKit
 import PythonSwiftCore
-//import PythonLib
+import PySwiftObject
+//// import PythonCore
 
 fileprivate
 func putenv(_ s: String) {
@@ -19,7 +20,7 @@ func putenv(_ s: String) {
 	putenv(result)
 }
 
-fileprivate class PythonRunTime {
+public class KivyLauncher {
 	
 	let PYTHON_VERSION: String = "3.10"
 	
@@ -27,11 +28,11 @@ fileprivate class PythonRunTime {
 	let KIVY_NO_CONSOLELOG: Int = 1
 	var prog: String
 	let other_paths: [String]
+	var pyswiftImports: [PySwiftModuleImport]
 	
-	
-	init(other_paths: [String] = []) throws {
+	public init(other_paths: [String] = [], pyswiftImports: [PySwiftModuleImport]) throws {
 		self.other_paths = other_paths
-		
+		self.pyswiftImports = pyswiftImports
 		chdir("YourApp")
 		
 		if let _prog = Bundle.main.path(forResource: "YourApp/main", ofType: "py") {
@@ -88,9 +89,9 @@ fileprivate class PythonRunTime {
 	
 	private func pySwiftImports() {
 		// add PySwiftMpdules to Python's import list
-		for _import in PythonSwiftImportList {
+		for _import in pyswiftImports {
 #if DEBUG
-			//print("Importing PySwiftModule:",String(cString: _import.0))
+			print("Importing PySwiftModule:",String(cString: _import.name))
 #endif
 			if PyImport_AppendInittab(_import.name, _import.module) == -1 {
 				PyErr_Print()
@@ -177,7 +178,7 @@ fileprivate class PythonRunTime {
 		""".withCString(PyRun_SimpleString)
 	}
 	
-	func run_main(_ argc: Int32, _ argv: UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>) throws -> Int32 {
+	public func run_main(_ argc: Int32, _ argv: UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>) throws -> Int32 {
 		
 		let _argc = Int(argc)
 		let python_argv = PyMem_RawMalloc(MemoryLayout<UnicodeScalar>.size * _argc)!
@@ -213,22 +214,4 @@ fileprivate class PythonRunTime {
 }
 
 
-@_cdecl("SDL_main")
-func main(_ argc: Int32, _ argv: UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>) -> Int32 {
-	print("running main")
-	//Bundle.module
-	var ret: Int32 = 0
-	
-	do {
-		let python = try PythonRunTime(other_paths: [])
-		
-		//python.prog = PyCoreBluetooth.main_py.path
-		
-		ret = try python.run_main(argc, argv)
-	} catch let err {
-		print(err.localizedDescription)
-	}
-	
-	return ret
-	
-}
+

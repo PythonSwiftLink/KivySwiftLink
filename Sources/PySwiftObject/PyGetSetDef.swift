@@ -2,7 +2,7 @@
 import Foundation
 import PythonSwiftCore
 //import PythonTypeAlias
-import PythonLib
+import PythonCore
 
 public final class PyGetSetDefWrap {
     let name: UnsafePointer<CChar>

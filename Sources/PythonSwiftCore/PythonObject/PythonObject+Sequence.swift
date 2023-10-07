@@ -1,5 +1,5 @@
 import Foundation
-import PythonLib
+import PythonCore
 //import PythonTypeAlias
 
 class PyArray<T: PyConvertible>: PySequenceProtocol {

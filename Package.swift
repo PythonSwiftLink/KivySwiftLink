@@ -41,7 +41,7 @@ let package = Package(
 		),
     ],
 	dependencies: [
-		.package(url: "https://github.com/PythonSwiftLink/KivyCore", from: .init(0, 0, 0)),
+		.package(url: "https://github.com/PythonSwiftLink/KivyCore", exact: .init(0, 0, 0)),
 	],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -75,7 +75,7 @@ let package = Package(
 			name: "PythonSwiftCore",
 			dependencies: [
 				//"PythonLib",
-				.product(name: "PythonLib", package: "KivyCore"),
+				.product(name: "PythonCore", package: "KivyCore"),
 				//"PythonTypeAlias"
 			],
 			resources: [

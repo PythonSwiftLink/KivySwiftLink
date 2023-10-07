@@ -1,3 +1,3 @@
 #if BEEWARE
-import PythonLib
+import PythonCore
 #endif

@@ -1,7 +1,7 @@
 
 import Foundation
 import CoreGraphics
-import PythonLib
+import PythonCore
 //import PythonTypeAlias
 
 extension String {

@@ -5,7 +5,7 @@
 
 import AVFoundation
 import Foundation
-import PythonLib
+import PythonCore
 //import PythonTypeAlias
 
 @inlinable

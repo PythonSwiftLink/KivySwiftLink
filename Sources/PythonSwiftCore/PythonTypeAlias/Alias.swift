@@ -2,7 +2,7 @@
 
 import Foundation
 
-import PythonLib
+import PythonCore
 
 public typealias PythonType = UnsafeMutablePointer<PyTypeObject>?
 public typealias PySwiftObjectPointer = UnsafeMutablePointer<PySwiftObject>?

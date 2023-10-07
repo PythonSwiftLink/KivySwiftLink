@@ -1,5 +1,5 @@
 import Foundation
-import PythonLib
+import PythonCore
 //import PythonTypeAlias
 
 //public func PyErr_Printer() -> (type: PyPointer, value: PyPointer, tb: PyPointer) {

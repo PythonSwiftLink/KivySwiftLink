@@ -5,7 +5,7 @@
 
 import Foundation
 #if BEEWARE
-import PythonLib
+import PythonCore
 
 #endif
 

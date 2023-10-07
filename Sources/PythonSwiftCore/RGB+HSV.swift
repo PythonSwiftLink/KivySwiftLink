@@ -5,7 +5,7 @@
 import Foundation
 import CoreGraphics
 //#if BEEWARE
-//import PythonLib
+//import PythonCore
 //#endif
 //
 //// https://www.cs.rit.edu/~ncs/color/t_convert.html

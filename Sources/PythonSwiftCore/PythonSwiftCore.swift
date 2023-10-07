@@ -8,7 +8,7 @@
 import Foundation
 
 @_exported 
-import PythonLib
+import PythonCore
 
 //import PythonTypeAlias
 
