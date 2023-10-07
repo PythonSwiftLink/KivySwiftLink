@@ -75,7 +75,7 @@ let package = Package(
 			name: "PythonSwiftCore",
 			dependencies: [
 				//"PythonLib",
-				.product(name: "KivyCore", package: "KivyCore", moduleAliases: ["KivyCore": "PythonLib"]),
+				.product(name: "PythonLib", package: "KivyCore"),
 				//"PythonTypeAlias"
 			],
 			resources: [
