@@ -30,6 +30,8 @@ public class KivyLauncher {
 	let other_paths: [String]
 	var pyswiftImports: [PySwiftModuleImport]
 	
+	public var py_lib: String = "lib"
+	
 	public init(other_paths: [String] = [], pyswiftImports: [PySwiftModuleImport]) throws {
 		self.other_paths = other_paths
 		self.pyswiftImports = pyswiftImports
@@ -83,7 +85,7 @@ public class KivyLauncher {
 		let python_home = "PYTHONHOME=\(resourcePath)"
 		putenv(python_home)
 		let extra = other_paths.count > 0 ? ":\(other_paths.joined(separator: ":"))" : ""
-		let python_path = "PYTHONPATH=\(resourcePath):\(resourcePath)/lib/python\(PYTHON_VERSION)/:\(resourcePath)/lib/python\(PYTHON_VERSION)/site-packages\(extra):."
+		let python_path = "PYTHONPATH=\(resourcePath):\(resourcePath)/\(py_lib)/python\(PYTHON_VERSION)/:\(resourcePath)/\(py_lib)/python\(PYTHON_VERSION)/site-packages\(extra):."
 		putenv(python_path)
 	}
 	
