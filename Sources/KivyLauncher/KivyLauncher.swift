@@ -35,7 +35,7 @@ public class KivyLauncher {
 		self.pyswiftImports = pyswiftImports
 		chdir("YourApp")
 		
-		if let _prog = Bundle.main.path(forResource: "YourApp/main", ofType: "py") {
+		if let _prog = Bundle.main.path(forResource: "YourApp/main", ofType: "pyc") {
 			prog = _prog
 		} else {
 			throw CocoaError.error(.fileNoSuchFile)
