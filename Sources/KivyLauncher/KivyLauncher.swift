@@ -30,11 +30,12 @@ public class KivyLauncher {
 	let other_paths: [String]
 	var pyswiftImports: [PySwiftModuleImport]
 	
-	public var py_lib: String = "lib"
+	public var py_lib: String
 	
-	public init(other_paths: [String] = [], pyswiftImports: [PySwiftModuleImport]) throws {
+	public init(other_paths: [String] = [], pyswiftImports: [PySwiftModuleImport], py_lib: String = "lib" ) throws {
 		self.other_paths = other_paths
 		self.pyswiftImports = pyswiftImports
+		self.py_lib = py_lib
 		chdir("YourApp")
 		
 		if let _prog = Bundle.main.path(forResource: "YourApp/main", ofType: "pyc") {
