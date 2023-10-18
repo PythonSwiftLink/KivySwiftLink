@@ -1,35 +1,13 @@
-// swift-tools-version: 5.9
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version: 5.8
 
 import PackageDescription
 
-//var pythonLibDeps: [Target.Dependency] = [
-//	"libcrypto",
-//	"libpython3.10",
-//	"libffi",
-//	"libfreetype",
-//	"libios",
-//	"libjpeg",
-//	"libkivy",
-//	"libpillow",
-//	"libpng16",
-//	"libpyobjus",
-//	"libSDL2_image",
-//	"libSDL2_mixer",
-//	"libSDL2_ttf",
-//	"libSDL2",
-//]
-
-//pythonLibDeps.append("libssl")
-
-
 let package = Package(
     name: "KivySwiftLink",
+	platforms: [.iOS(.v13)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
-//        .library(
-//            name: "KPythonSwiftLink",
-//            targets: ["KPythonSwiftLink", "PythonLib"]),
+
 		.library(name: "KivyLauncher", targets: ["KivyLauncher"]),
 			.library(
 				name: "PythonSwiftCore",
@@ -41,29 +19,24 @@ let package = Package(
 		),
     ],
 	dependencies: [
-		.package(url: "https://github.com/PythonSwiftLink/KivyCore", from: .init(310, 0, 0)),
+		.package(url: "https://github.com/PythonSwiftLink/KivyPythonCore", .upToNextMajor(from: .init(310, 0, 0))),
+		//.package(path: "/Volumes/CodeSSD/XcodeGithub/KivyPythonCore")
 	],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
+
 		.target(
 			name: "KivyLauncher",
 			dependencies: [
 				"PythonSwiftCore",
-				//"PythonLib",
-				//.product(name: "KivyPackage", package: "KivyPackage"),
 				"PySwiftObject"
 			]
-			//resources: [.copy("lib")]
 		),
 		
 		.target(
 			name: "PySwiftObject",
 			dependencies: [
 				//"PythonLib",
-				//.product(name: "KivyPackage", package: "KivyPackage"),
 				"PythonSwiftCore",
-				//"PythonTypeAlias"
 			],
 			resources: [
 				
@@ -75,8 +48,7 @@ let package = Package(
 			name: "PythonSwiftCore",
 			dependencies: [
 				//"PythonLib",
-				.product(name: "PythonCore", package: "KivyCore"),
-				//"PythonTypeAlias"
+				.product(name: "PythonCore", package: "KivyPythonCore"),
 			],
 			resources: [
 				
