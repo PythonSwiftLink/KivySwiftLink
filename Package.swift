@@ -8,7 +8,6 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
 
-		.library(name: "KivyLauncher", targets: ["KivyLauncher"]),
 			.library(
 				name: "PythonSwiftCore",
 				targets: ["PythonSwiftCore"]
@@ -19,19 +18,11 @@ let package = Package(
 		),
     ],
 	dependencies: [
-		.package(url: "https://github.com/PythonSwiftLink/KivyPythonCore", .upToNextMajor(from: .init(310, 0, 0))),
+		.package(url: "https://github.com/PythonSwiftLink/KivyPythonCore", .upToNextMajor(from: .init(311, 0, 0))),
 		//.package(path: "/Volumes/CodeSSD/XcodeGithub/KivyPythonCore")
 	],
     targets: [
 
-		.target(
-			name: "KivyLauncher",
-			dependencies: [
-				"PythonSwiftCore",
-				"PySwiftObject"
-			]
-		),
-		
 		.target(
 			name: "PySwiftObject",
 			dependencies: [
