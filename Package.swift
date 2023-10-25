@@ -19,7 +19,7 @@ let package = Package(
 		),
     ],
 	dependencies: [
-		.package(url: "https://github.com/PythonSwiftLink/KivyPythonCore", .upToNextMajor(from: .init(310, 0, 0))),
+		.package(url: "https://github.com/PythonSwiftLink/KivyPythonCore", .upToNextMajor(from: .init(311, 0, 0))),
 		//.package(path: "/Volumes/CodeSSD/XcodeGithub/KivyPythonCore")
 	],
     targets: [
